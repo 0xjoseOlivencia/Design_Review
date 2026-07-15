@@ -1,0 +1,17 @@
+{
+  "name": "rechain",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "npm install -D concurrently && npm run install-all && concurrently \"npm run dev:frontend\" \"npm run dev:admin\"",
+    "install-all": "npm install && npm install --prefix frontend && npm install --prefix admin",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "dev:admin": "npm run dev --prefix admin",
+    "build": "npm run build:frontend && npm run build:admin",
+    "build:frontend": "npm run build --prefix frontend",
+    "build:admin": "npm run build --prefix admin"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.5"
+  }
+}
